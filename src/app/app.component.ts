@@ -11,12 +11,12 @@ import { Reading } from './model/reading';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   reading$: Observable<Reading> = new Observable<Reading>();
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  requestReading() {
     this.reading$ = this.http.get<any>('http://localhost:8080/api/new-reading');
   }
 

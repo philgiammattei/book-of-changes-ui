@@ -1,5 +1,10 @@
 <h1>Book of Changes</h1>
 
+<div class="question-form-container">
+  <label for="question">Enter your question:</label>
+  <input type="text" id="question" name="question">
+  <button (click)="requestReading()">Request a Reading</button>
+</div>
 <div *ngIf="reading$ | async as reading">
   <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
 
