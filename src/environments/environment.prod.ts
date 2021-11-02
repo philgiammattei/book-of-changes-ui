@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://https://book-of-changes-backend.herokuapp.com"
+  apiUrl: "https://book-of-changes-backend.herokuapp.com"
 };
