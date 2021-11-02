@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Line } from './model/line';
 import { Reading } from './model/reading';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
 
   requestReading() {
-    this.reading$ = this.http.get<any>('http://localhost:8080/api/new-reading');
+    this.reading$ = this.http.get<any>(`${environment.apiUrl}/api/new-reading`);
   }
 
   renderLine(line: Line) {
