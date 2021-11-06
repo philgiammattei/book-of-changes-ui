@@ -9,7 +9,8 @@
   <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
 
     <div class="lines-container">
-      <h2 *ngFor="let line of primaryHexagram.lines | reverse">{{renderLine(line)}}</h2>
+      <app-line *ngFor="let line of primaryHexagram.lines | reverse" [isYang]="line.yang"
+        [isChangeLine]="line.changeLine"></app-line>
     </div>
     <div class="explanations-container">
       <h2>{{primaryHexagram.hexagramNumber}}: {{primaryHexagram.englishName}}</h2>

@@ -20,20 +20,4 @@ export class AppComponent {
   requestReading() {
     this.reading$ = this.http.get<any>(`${environment.apiUrl}/api/new-reading`);
   }
-
-  renderLine(line: Line) {
-    console.log(line);
-
-    if (line.yang && line.changeLine) {
-      return '----o----';
-    } else if (line.yang && !line.changeLine) {
-      return '---------';
-    } else if (!line.yang && !line.changeLine) {
-      return '---   ---';
-    } else if (!line.yang && line.changeLine) {
-      return '--- x ---';
-    } else {
-      return 'invalid line';
-    }
-  }
 }

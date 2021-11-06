@@ -1,0 +1,13 @@
+.line {
+    margin-bottom: 2rem;
+
+    svg rect {
+        fill: black;
+    }
+
+    &.change-line {
+        svg rect {
+            fill: red;
+        }
+    }
+}
