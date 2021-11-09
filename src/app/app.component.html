@@ -1,31 +1,11 @@
-<h1>Book of Changes</h1>
+<mat-toolbar color="primary">
+  <span>Book of Changes</span>
+  <span class="example-spacer"></span>
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+</mat-toolbar>
 
-<div class="question-form-container">
-  <label for="question">Enter your question:</label>
-  <input type="text" id="question" name="question">
-  <button (click)="requestReading()">Request a Reading</button>
+<div class="page-content">
+  <router-outlet></router-outlet>
 </div>
-<div *ngIf="reading$ | async as reading">
-  <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
-
-    <div class="lines-container">
-      <app-line *ngFor="let line of primaryHexagram.lines | reverse" [isYang]="line.yang"
-        [isChangeLine]="line.changeLine"></app-line>
-    </div>
-    <div class="explanations-container">
-      <h2>{{primaryHexagram.hexagramNumber}}: {{primaryHexagram.englishName}}</h2>
-      <h2>{{primaryHexagram.hexagramExplanation}}</h2>
-      <div *ngFor="let line of primaryHexagram.lines">
-        <h2 *ngIf="line.changeLine">Line {{line.lineNumber}}: {{line.explanation}}</h2>
-      </div>
-      <div class="change-container" *ngIf="reading.changedHexagram as changedHexagram">
-        <h2>Resolves to: </h2>
-        <h2>{{changedHexagram.hexagramNumber}}: {{changedHexagram.englishName}}</h2>
-        <h2>{{changedHexagram.hexagramExplanation}}</h2>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<router-outlet></router-outlet>

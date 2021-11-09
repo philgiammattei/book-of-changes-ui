@@ -1,26 +1,8 @@
-:host {
+.page-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.question-form-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20rem;
-
-    input {
-        width: 20rem;
-        margin-top: 1rem;
-    }
-
-    button {
-        display: inline-block;
-        width: 10rem;
-        margin-top: 1rem;
-        padding: 0.5rem;
-    }
+    padding: 3rem 2rem;
 }
 
 .lines-container {
@@ -39,3 +21,7 @@
 .explanations-container {
     flex: 4;
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

@@ -1,0 +1,16 @@
+.question-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-form-field {
+        width: 20rem;
+    }
+
+    button {
+        display: inline-block;
+        width: 10rem;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+}
