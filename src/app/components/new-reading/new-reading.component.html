@@ -1,0 +1,8 @@
+<div class="question-form-container">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter your question</mat-label>
+        <textarea matInput placeholder="What can I expect from the world today?" [(ngModel)]="questionText"
+            type="text"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="goToReading()">Request a Reading</button>
+</div>

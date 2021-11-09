@@ -1,0 +1,26 @@
+<div *ngIf="reading$ | async as reading" class="reading-container">
+    <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
+
+        <h1>{{question}}</h1>
+
+
+        <div class="lines-container">
+            <app-line *ngFor="let line of primaryHexagram.lines | reverse" [isYang]="line.yang"
+                [isChangeLine]="line.changeLine"></app-line>
+        </div>
+        <div class="explanations-container">
+            <div class="primary-explanation">
+                <h2>{{primaryHexagram.hexagramNumber}}: {{primaryHexagram.englishName}}</h2>
+                <p>{{primaryHexagram.hexagramExplanation}}</p>
+                <div *ngFor="let line of primaryHexagram.lines">
+                    <div *ngIf="line.changeLine">Line {{line.lineNumber}}: {{line.explanation}}</div>
+                </div>
+            </div>
+            <div class="change-container" *ngIf="reading.changedHexagram as changedHexagram">
+                <h2>Resolves to: </h2>
+                <h2>{{changedHexagram.hexagramNumber}}: {{changedHexagram.englishName}}</h2>
+                <p>{{changedHexagram.hexagramExplanation}}</p>
+            </div>
+        </div>
+    </div>
+</div>

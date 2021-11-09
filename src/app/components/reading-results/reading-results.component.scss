@@ -1,0 +1,17 @@
+.reading-container {
+    margin-top: -1rem;
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    .lines-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-explanation {
+        margin-bottom: 2rem;
+    }
+}
