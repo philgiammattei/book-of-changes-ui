@@ -1,4 +1,4 @@
-<div *ngIf="reading$ | async as reading" class="reading-container">
+<div *ngIf="reading$ | async as reading; else readingLoad" class="reading-container">
     <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
 
         <h1>{{question}}</h1>
@@ -24,3 +24,6 @@
         </div>
     </div>
 </div>
+<ng-template #readingLoad>
+    <mat-spinner></mat-spinner>
+</ng-template>
