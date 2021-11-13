@@ -1,0 +1,10 @@
+<div *ngIf="hexagrams$ | async as hexagrams; else hexagramsLoad" class="hexagrams-container">
+    <button mat-raised-button *ngFor="let hexagram of hexagrams">
+        <app-hexagram [yangs]="hexagram.lineYangs"></app-hexagram>
+        <h4>{{hexagram.hexagramNumber}}</h4>
+        <h4>{{hexagram.englishName}}</h4>
+    </button>
+</div>
+<ng-template #hexagramsLoad>
+    <mat-spinner></mat-spinner>
+</ng-template>

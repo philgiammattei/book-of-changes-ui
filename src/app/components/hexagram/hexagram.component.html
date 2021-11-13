@@ -1,0 +1,6 @@
+<ng-container *ngIf="lines">
+    <app-line *ngFor="let line of lines" [isYang]="line.yang" [isChangeLine]="line.changeLine"></app-line>
+</ng-container>
+<ng-container *ngIf="yangs">
+    <app-line *ngFor="let yang of yangs" [isYang]="yang"></app-line>
+</ng-container>

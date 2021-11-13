@@ -5,23 +5,8 @@
     padding: 3rem 2rem;
 }
 
-.lines-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    padding: 3rem;
-    margin-top: 3rem;
+mat-toolbar {
+    .site-title {
+        cursor: pointer;
+    }
 }
-
-.primary-hexagram-container {
-    display: flex;
-}
-
-.explanations-container {
-    flex: 4;
-}
-
-.example-spacer {
-    flex: 1 1 auto;
-  }

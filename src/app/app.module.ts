@@ -10,12 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NewReadingComponent } from './components/new-reading/new-reading.component';
 import { ReadingResultsComponent } from './components/reading-results/reading-results.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
+import { AllHexagramsComponent } from './components/all-hexagrams/all-hexagrams.component';
+import { HexagramComponent } from './components/hexagram/hexagram.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { FormsModule } from '@angular/forms';
     NewReadingComponent,
     ReadingResultsComponent,
     HomeComponent,
+    AllHexagramsComponent,
+    HexagramComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     FormsModule,
     MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
