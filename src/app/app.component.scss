@@ -6,6 +6,12 @@
 }
 
 mat-toolbar {
+    width: 100%;
+
+    .example-spacer {
+        width: 100%;
+    }
+
     .site-title {
         cursor: pointer;
     }

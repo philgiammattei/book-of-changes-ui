@@ -1,0 +1,22 @@
+<ng-container *ngIf="hexagram$ | async as hexagram">
+    <div class="hexagram-container">
+        <button mat-icon-button color="primary" [routerLink]="previousHexagram(hexagram.hexagramNumber)"
+            aria-label="icon with left facing arrow">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <app-hexagram [lines]="hexagram.lines"></app-hexagram>
+        <button mat-icon-button color="primary" [routerLink]="nextHexagram(hexagram.hexagramNumber)"
+            aria-label="icon with right facing arrow">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+    <div class="explanations-container">
+        <div class="primary-explanation">
+            <h2>{{hexagram.hexagramNumber}}: {{hexagram.englishName}}</h2>
+            <p>{{hexagram.hexagramExplanation}}</p>
+            <div *ngFor="let line of hexagram.lines">
+                <div class="line-explanation">Line {{line.lineNumber}}: {{line.explanation}}</div>
+            </div>
+        </div>
+    </div>
+</ng-container>

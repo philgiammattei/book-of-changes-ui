@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  demoHex: any;
+  demoLines: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.demoHex = [
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
-      { isYang: this.randomBoolean(), isChangeLine: this.randomBoolean() },
+    this.demoLines = [
+      this.randomBoolean(),
+      this.randomBoolean(),
+      this.randomBoolean(),
+      this.randomBoolean(),
+      this.randomBoolean(),
+      this.randomBoolean(),
     ];
   }
 

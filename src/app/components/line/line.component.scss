@@ -12,8 +12,10 @@
     }
 
     &.change-line {
-        svg rect {
-            fill: red;
+        svg {
+            rect {
+                fill: #FFD700;
+            }
         }
     }
 }
