@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { AllHexagramsComponent } from './components/all-hexagrams/all-hexagrams.component';
 import { HexagramComponent } from './components/hexagram/hexagram.component';
 import { HexagramDetailComponent } from './components/hexagram-detail/hexagram-detail.component';
+import { ReadingService } from './services/reading.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { HexagramDetailComponent } from './components/hexagram-detail/hexagram-d
     MatCardModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [ReadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

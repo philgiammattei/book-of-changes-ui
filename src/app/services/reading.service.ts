@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { pipe } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+
+class QuantumResponse {
+  data: number[] = [];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +26,8 @@ export class ReadingService {
   }
 
   requestReading() {
-    return this.http.get<any>(`${environment.apiUrl}/api/new-reading`);
+    return this.http.get<QuantumResponse>(environment.quantumUrl).pipe(
+      switchMap((response) => this.http.post<any>(`${environment.apiUrl}/api/new-reading`, response.data)));
+
   }
 }
