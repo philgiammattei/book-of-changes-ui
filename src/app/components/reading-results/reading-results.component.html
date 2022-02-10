@@ -1,8 +1,7 @@
+<h1> {{question}}</h1>
+
 <div *ngIf="reading$ | async as reading; else readingLoad" class="reading-container">
     <div *ngIf="reading.primaryHexagram as primaryHexagram" class="primary-hexagram-container">
-
-        <h1>{{question}}</h1>
-
 
         <div class="hexagram-container">
             <app-hexagram [lines]="primaryHexagram.lines"></app-hexagram>
@@ -28,7 +27,7 @@
             </div>
         </div>
     </div>
-    <button mat-button color="primary" routerLink="../new-reading">Get Another Reading</button>
+    <button class="new-reading-button" mat-button color="primary" routerLink="../new-reading">Get Another Reading</button>
 </div>
 <ng-template #readingLoad>
     <mat-spinner></mat-spinner>

@@ -1,23 +1,57 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  margin-bottom: 3rem;
+}
+
 .reading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+
+  button h2 {
+    white-space: normal;
+  }
+
+  .new-reading-button {
+    margin-top: 2rem;
+  }
+
+  margin-top: -1rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .primary-hexagram-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
 
-    button h2 {
-        white-space: normal;
+    .hexagram-container {
+      width: 100%;
+      min-width: 400px;
+      display: flex;
+      justify-content: center;
+      flex: 2;
+      margin-top: 0.5rem;
+      margin-bottom: 3rem;
     }
 
-    margin-top: -1rem;
+    .explanations-container {
+      flex: 3;
+      padding: 0 2rem;
 
-    h1 {
-        margin-bottom: 1.5rem;
-    }
-
-    .primary-explanation {
+      .primary-explanation {
         margin-bottom: 2rem;
+      }
     }
+  }
 }
 
 mat-spinner {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
