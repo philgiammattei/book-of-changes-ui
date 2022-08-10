@@ -1,12 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { pipe } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-
-class QuantumResponse {
-  data: number[] = [];
-}
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +20,12 @@ export class ReadingService {
   }
 
   requestReading() {
-    return this.http.get<QuantumResponse>(environment.quantumUrl).pipe(
-      switchMap((response) => this.http.post<any>(`${environment.apiUrl}/api/new-reading`, response.data)));
+    // provide 18 integers between 0 and 255 to imitate quantum response
+    const seedNumbers = [];
+    for (let i = 0; i < 18; i++) {
+      seedNumbers.push(Math.floor(Math.random() * 256));
+    }
+    return this.http.post<any>(`${environment.apiUrl}/api/new-reading`, seedNumbers);
 
   }
 }
